@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="SmartMart - Smart Shopping. Everyday Essentials.">
+
+  <title>SmartMart | Smart Shopping. Everyday Essentials.</title>
+
+  <link rel="stylesheet" href="./src/css/style.css">
+</head>
+
+<body>
+
+  <!-- ================================
+       Header
+       ================================ -->
+
+  <header class="site-header">
+    <div class="container">
+
+      <a href="./index.html" class="logo">
+        SmartMart
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="./index.html">Home</a>
+        <a href="./products/">Products</a>
+       
+        <a href="./cart/" class="cart-link" aria-label="Shopping cart">
+          <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 3h2l2.4 11.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 7H6" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="10" cy="20" r="1.5" fill="currentColor" />
+            <circle cx="18" cy="20" r="1.5" fill="currentColor" />
+          </svg>
+        
+          <span class="cart-label">Cart</span>
+        
+          <span id="cart-count" class="cart-count" aria-label="Items in cart"></span>
+        </a>
+
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- ================================
+         Hero Section
+         ================================ -->
+
+    <section class="hero">
+      <div class="container">
+
+        <p class="hero-label">
+          Welcome to SmartMart
+        </p>
+
+        <h1>
+          Smart Shopping.<br>
+          Everyday Essentials.
+        </h1>
+
+        <p>
+          Discover everyday products, compare prices,
+          and shop for what you need with ease.
+        </p>
+
+        <div class="hero-actions">
+          <a href="./products/" class="btn">
+            Shop Products
+          </a>
+
+          <a href="./products/" class="hero-secondary-link">
+            Browse Categories
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================================
+         Store Benefits
+         ================================ -->
+
+    <section class="benefits-section">
+      <div class="container">
+
+        <div class="benefits-grid">
+
+          <article class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">
+              🛒
+            </div>
+
+            <h2>Easy Shopping</h2>
+
+            <p>
+              Browse our products and find everyday
+              essentials quickly.
+            </p>
+          </article>
+
+
+          <article class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">
+              🔎
+            </div>
+
+            <h2>Find What You Need</h2>
+
+            <p>
+              Search, filter, and sort products to
+              find the right items.
+            </p>
+          </article>
+
+
+          <article class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">
+              💳
+            </div>
+
+            <h2>Simple Checkout</h2>
+
+            <p>
+              Review your cart and complete your
+              order through our simple checkout.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================================
+         Featured Products
+         ================================ -->
+
+    <section class="featured-section">
+      <div class="container">
+
+        <div class="section-heading">
+          <p class="section-label">
+            Explore SmartMart
+          </p>
+
+          <h2>
+            Featured Products
+          </h2>
+
+          <p>
+            Take a look at some of the products
+            available in our store.
+          </p>
+        </div>
+
+        <div id="featured-products" class="product-grid" aria-live="polite">
+          <p class="loading-message">
+            Loading featured products...
+          </p>
+        </div>
+
+        <div class="section-action">
+          <a href="./products/" class="btn">
+            View All Products
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================================
+         Call to Action
+         ================================ -->
+
+    <section class="cta-section">
+      <div class="container">
+
+        <div class="cta-card">
+
+          <div>
+            <p class="section-label">
+              Ready to shop?
+            </p>
+
+            <h2>
+              Find your everyday essentials.
+            </h2>
+
+            <p>
+              Explore our product catalog and start
+              building your shopping cart today.
+            </p>
+          </div>
+
+          <a href="./products/" class="btn">
+            Start Shopping
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ================================
+       Footer
+       ================================ -->
+
+  <footer class="site-footer">
+    <div class="container">
+
+      <p>
+        &copy; 2026 SmartMart.
+        Smart Shopping. Everyday Essentials.
+      </p>
+
+    </div>
+  </footer>
+
+
+  <script type="module" src="./src/js/main.js"></script>
+  <script type="module" src="./src/js/cart-count.js"></script>
+  
+
+</body>
+
+</html>
