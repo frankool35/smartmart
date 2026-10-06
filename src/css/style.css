@@ -147,6 +147,7 @@ select {
   font-weight: 700;
   line-height: 1;
 }
+
 /* ================================
    Hero
    ================================ */
@@ -154,11 +155,11 @@ select {
 .hero {
   position: relative;
   overflow: hidden;
-  padding: 6rem 0;
+  padding: 7rem 0 6.5rem;
   background:
     linear-gradient(135deg,
       var(--soft-green) 0%,
-      var(--white) 55%,
+      var(--white) 52%,
       #fff3e0 100%);
   text-align: center;
 }
@@ -172,44 +173,86 @@ select {
 }
 
 .hero::before {
-  width: 260px;
-  height: 260px;
-  top: -130px;
-  left: -100px;
-  background-color: rgba(67, 160, 71, 0.08);
+  width: 360px;
+  height: 360px;
+  top: -180px;
+  left: -130px;
+  background-color: rgba(67, 160, 71, 0.09);
 }
 
 .hero::after {
-  width: 320px;
-  height: 320px;
-  right: -140px;
-  bottom: -170px;
+  width: 420px;
+  height: 420px;
+  right: -180px;
+  bottom: -220px;
   background-color: rgba(245, 124, 0, 0.08);
 }
 
 .hero .container {
   position: relative;
   z-index: 1;
+  max-width: 900px;
+}
+
+.hero-label {
+  display: inline-block;
+  margin-bottom: 1.25rem;
+  padding: 0.45rem 1rem;
+  background-color: rgba(67, 160, 71, 0.1);
+  border-radius: 999px;
+  color: var(--secondary-color);
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 
 .hero h1 {
   max-width: 850px;
-  margin: 0 auto 1rem;
+  margin: 0 auto 1.25rem;
   color: var(--primary-color);
-  font-size: clamp(2.3rem, 6vw, 4rem);
-  line-height: 1.15;
-  letter-spacing: -1px;
+  font-size: clamp(2.8rem, 7vw, 4.8rem);
+  line-height: 1.08;
+  letter-spacing: -1.5px;
 }
 
-.hero p {
-  max-width: 700px;
-  margin: 0 auto 2rem;
+.hero p:not(.hero-label) {
+  max-width: 680px;
+  margin: 0 auto 2.5rem;
   color: var(--medium-gray);
-  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .hero .btn {
-  display: inline-block;
+  padding: 0.95rem 1.8rem;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.hero-secondary-link {
+  padding: 0.95rem 1.2rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  border: 2px solid transparent;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.hero-secondary-link:hover {
+  color: var(--secondary-color);
+  background-color: rgba(67, 160, 71, 0.08);
+  border-color: rgba(67, 160, 71, 0.2);
 }
 
 /* ================================
@@ -304,12 +347,13 @@ select {
   height: 100%;
   background-color: var(--white);
   border: 1px solid var(--border-color);
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
   transition:
     transform 0.2s ease,
-    box-shadow 0.2s ease;
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .product-card:hover {
@@ -319,10 +363,15 @@ select {
 
 .product-card img {
   width: 100%;
-  height: 220px;
+  height: 230px;
   object-fit: contain;
-  background-color: var(--light-gray);
-  padding: 1rem;
+  background-color: #fafafa;
+  padding: 1.25rem;
+  transition: transform 0.25s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.04);
 }
 
 .product-card-content {
@@ -827,7 +876,7 @@ select {
    ================================ */
 
 .benefits-section {
-  padding: 3rem 0;
+  padding: 4rem 0;
   background-color: var(--light-gray);
 }
 
@@ -838,16 +887,35 @@ select {
 }
 
 .benefit-card {
-  padding: 2rem 1.5rem;
+  position: relative;
+  padding: 2.5rem 2rem;
   text-align: center;
   background-color: var(--white);
   border: 1px solid var(--border-color);
-  border-radius: 10px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.09);
+  border-color: #c8e6c9;
 }
 
 .benefit-icon {
-  margin-bottom: 1rem;
-  font-size: 2rem;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  background-color: var(--soft-green);
+  border-radius: 50%;
+  font-size: 1.8rem;
 }
 
 .benefit-card h2 {
@@ -857,7 +925,10 @@ select {
 }
 
 .benefit-card p {
+  max-width: 280px;
+  margin: 0 auto;
   color: var(--medium-gray);
+  line-height: 1.7;
 }
 
 /* ================================
@@ -872,10 +943,17 @@ select {
 
 .section-heading h2 {
   margin-bottom: 0.75rem;
+  color: var(--primary-color);
+  font-size: 2.2rem;
+  line-height: 1.2;
 }
 
 .section-heading>p:last-child {
+  max-width: 620px;
+  margin: 0 auto;
   color: var(--medium-gray);
+  font-size: 1.05rem;
+  line-height: 1.7;
 }
 
 /* ================================
@@ -947,3 +1025,86 @@ select {
     padding: 2rem 1.5rem;
   }
 }
+
+.original-price {
+  text-decoration: line-through;
+  opacity: 0.6;
+  margin-right: 0.5rem;
+}
+
+.product-price strong {
+  font-size: 1.1rem;
+}
+
+.discount-badge {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+/* Footer information */
+.footer-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-info h2 {
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.footer-info p {
+  margin: 0.35rem 0;
+}
+
+.footer-copyright {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}
+
+/* Mobile footer layout */
+@media (max-width: 700px) {
+  .footer-info {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* ================================
+   SmartMart Logo
+   ================================ */
+
+.logo {
+  width: 68px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 50%;
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.logo img {
+  width: 64px;
+  height: 64px;
+  display: block;
+  object-fit: contain;
+}
+
+
+.logo:hover {
+  transform: scale(1.04);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+

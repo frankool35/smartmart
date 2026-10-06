@@ -23,7 +23,12 @@ function displayProducts(products) {
         return;
     }
 
-    productList.innerHTML = products.map((product) => `
+    productList.innerHTML = products.map((product) => {
+        const discount = Number(product.discountPercentage) || 0;
+        const discountedPrice =
+            product.price * (1 - discount / 100);
+
+        return `
     <article class="product-card">
       <img
         src="${product.thumbnail}"
@@ -34,7 +39,20 @@ function displayProducts(products) {
         <h2>${product.title}</h2>
 
         <p class="product-price">
-          ${formatCurrency(product.price)}
+          ${discount > 0
+                ? `
+              <span class="original-price">
+                ${formatCurrency(product.price)}
+              </span>
+              <strong>
+                ${formatCurrency(discountedPrice)}
+              </strong>
+              <span class="discount-badge">
+                ${discount.toFixed(0)}% OFF
+              </span>
+            `
+                : formatCurrency(product.price)
+            }
         </p>
 
         <p>
@@ -49,7 +67,8 @@ function displayProducts(products) {
         </a>
       </div>
     </article>
-  `).join("");
+  `;
+    }).join("");
 }
 
 function populateCategories(products) {

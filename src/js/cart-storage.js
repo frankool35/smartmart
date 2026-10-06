@@ -17,13 +17,20 @@ export function addToCart(product) {
         (item) => item.id === product.id
     );
 
+    const discount = Number(product.discountPercentage) || 0;
+
+    const discountedPrice =
+        product.price * (1 - discount / 100);
+
     if (existingProduct) {
         existingProduct.quantity += 1;
     } else {
         cart.push({
             id: product.id,
             title: product.title,
-            price: product.price,
+            price: discountedPrice,
+            originalPrice: product.price,
+            discountPercentage: discount,
             thumbnail: product.thumbnail,
             quantity: 1
         });

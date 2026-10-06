@@ -63,7 +63,7 @@ function displayOrderSummary() {
 
     <div class="summary-line">
       <span>Shipping</span>
-      <span${formatCurrency(SHIPPING_COST)}></span>
+      <span>${formatCurrency(SHIPPING_COST)}></span>
     </div>
 
     <div class="summary-total">
